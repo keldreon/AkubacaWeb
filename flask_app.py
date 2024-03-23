@@ -127,7 +127,8 @@ def ai_extract_txt(client, document):
     if result.read is not None:
         for line in result.read.blocks[0].lines:
             extracted_text += "\n{}".format(" ".join([line.text]))
-           
+    
+    app.logger.info(f"Returning OCR extraction text:  \n{extracted_text}")     
     return extracted_text
 
 # summarizer
